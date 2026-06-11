@@ -1,0 +1,55 @@
+# === 编译生成文件 ===
+*.pyc
+*.o
+*.obj
+*.out
+*.elf
+*.bin
+*.hex
+*.axf
+*.map
+*.lst
+*.lib
+*.d
+*.dep
+*.dblite
+*.bak
+*.i
+*.uimg
+*.pdb
+*.idb
+*.ilk
+*.old
+
+# === 编译输出目录 ===
+build/
+Debug/
+Release/
+DebugConfig/
+RTE/
+settings/
+
+# === RT-Thread Env / Kconfig 产生的临时文件 ===
+*.config.old
+.config.*
+
+# === 链接器/调试器日志与设置（本地调试痕迹） ===
+JLinkLog.txt
+JLinkSettings.ini
+
+# === VSCode 配置（个人偏好忽略，保留共享的任务/启动配置） ===
+.vscode/settings.json
+.vscode/.browse.*
+
+# === 开发环境文件（各操作系统） ===
+.DS_Store
+*~
+Thumbs.db
+
+# === MDK/Keil 自动生成的用户配置 ===
+*.uvguix*
+
+# === GNU Global 标签文件 ===
+GPATH
+GRTAGS
+GTAGS
