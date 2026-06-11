@@ -20,6 +20,9 @@
 *.idb
 *.ilk
 *.old
+*.vs
+*.vscode
+*.settings
 
 # === 编译输出目录 ===
 build/
