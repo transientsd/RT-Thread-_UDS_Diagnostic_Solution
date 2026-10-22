@@ -14,8 +14,10 @@
 #include "board.h"
 #include<rtthread.h>
 #include<rtdevice.h>
+#include"spi_config.h"
 
 #ifdef RT_USING_SPI
+
 
 #if defined(BSP_USING_SPI1) || defined(BSP_USING_SPI2) || defined(BSP_USING_SPI3) || defined(BSP_USING_SPI4) || defined(BSP_USING_SPI5) || defined(BSP_USING_SPI6)
 

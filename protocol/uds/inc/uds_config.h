@@ -14,6 +14,6 @@
 #define Rxid 0x456
 #define N_Brtimeout 1000
 #define N_Crtimeout 1500
-
+#define UDS_MAX_SERVICE_LEN 128
 
 #endif /* DRIVERS_INCLUDE_UDS_CONFIG_H_ */

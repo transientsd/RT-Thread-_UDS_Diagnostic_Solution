@@ -18,6 +18,7 @@
 extern "C" {
 #endif
 
+#define BSP_USING_SPI1
 #ifdef BSP_USING_SPI1
 #ifndef SPI1_BUS_CONFIG
 #define SPI1_BUS_CONFIG                             \

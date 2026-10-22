@@ -22,7 +22,7 @@ typedef struct Can_InitCof{
     CAN_TxHeaderTypeDef pTxHeader;
     CAN_RxHeaderTypeDef pRxHeader;
 }Can_InitCof;
-
+extern Can_InitCof can1_cfg;
 #define RING_BUF_SIZE 10
 typedef struct CanFrame_buffer{
        uint32_t id;

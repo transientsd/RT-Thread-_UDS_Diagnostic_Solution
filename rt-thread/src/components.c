@@ -217,6 +217,8 @@ int rtthread_startup(void)
 {
     rt_hw_interrupt_disable();
 
+    //SCB->VTOR = 0x08004000;
+    *(volatile uint32_t *)0xE000ED08 = 0x08004000;
     /* board level initialization
      * NOTE: please initialize heap inside board initialization.
      */

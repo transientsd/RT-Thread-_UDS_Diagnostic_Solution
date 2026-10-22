@@ -12,10 +12,11 @@
  */
 
 #include <rtthread.h>
-#include <uds_tp.h>
 #include "drv_can.h"
+#include <isotp.h>
 
 extern struct rt_semaphore rx_sem;
+extern Isotp_Config Isotp_configstr;
 CanRec_RingBuffer Can1_Recringbuffer={0};
 Can_InitCof can1_cfg;
 
@@ -293,23 +294,22 @@ void Can_send(int argc,char *argv[])
 /* Export to msh command list */
 MSH_CMD_EXPORT(Can_send, Can_send);
 /**
- * @brief Can rx thread, passes data to uds parsing
+ * @brief Can rx thread, passes data to isotp parsing
  * @param parameter , it can be left undefined.
  * @return void
  */
 void can_rx_thread_entry(void *parameter)
 {
-    CanFrame_buffer temp_frame; // 专门用来接数据的临时帧
+    CanFrame_buffer temp_frame;
 
     while(1)
     {
         if(rt_sem_take(&rx_sem, RT_WAITING_FOREVER) == RT_EOK)
         {
-            // 弹出数据到临时帧
+
             if(ring_pop(&Can1_Recringbuffer, &temp_frame) == RT_EOK)
             {
-                // 使用临时帧传给 UDS 解析
-                uds_tp_input(&temp_frame);
+                isotp_input(&Isotp_configstr,&temp_frame);
             }
         }
     }
@@ -329,7 +329,6 @@ static int Can_receive_sample(int argc, char *argv[])
      {
          return -1;
      }
-    /* 创建can接收线程*/
     tid = rt_thread_create("Can_receive",
                            can_rx_thread_entry,
                            RT_NULL,

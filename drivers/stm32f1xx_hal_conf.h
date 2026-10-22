@@ -307,6 +307,7 @@
  #include "stm32f1xx_hal_nand.h"
 #endif /* HAL_NAND_MODULE_ENABLED */     
 
+#define HAL_SPI_MODULE_ENABLED
 #ifdef HAL_SPI_MODULE_ENABLED
  #include "stm32f1xx_hal_spi.h"
 #endif /* HAL_SPI_MODULE_ENABLED */

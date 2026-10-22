@@ -76,7 +76,7 @@
 #define FINSH_USING_MSH
 #define FINSH_USING_MSH_DEFAULT
 #define FINSH_USING_MSH_ONLY
-#define FINSH_ARG_MAX 12
+#define FINSH_ARG_MAX 10
 /* end of Command shell */
 
 /* Device virtual file system */
@@ -90,11 +90,6 @@
 #define RT_USING_SERIAL
 #define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
-#define RT_USING_SPI
-#define RT_USING_SFUD
-#define RT_SFUD_USING_SFDP
-#define RT_SFUD_USING_FLASH_INFO_TABLE
-#define RT_SFUD_SPI_MAX_HZ 50000000
 
 /* Using USB */
 
