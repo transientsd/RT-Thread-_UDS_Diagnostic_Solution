@@ -67,6 +67,7 @@ int main(void)
 {
     uint32_t Rxdata=0x456;
 
+    rt_kprintf("start initial\n");
     /* set PA0 PA1 mode */
      rt_pin_mode(LED0, PIN_MODE_OUTPUT);
      rt_pin_mode(LED1,PIN_MODE_OUTPUT);
@@ -75,7 +76,7 @@ int main(void)
      rt_pin_write(LED1,0);
 
     memset(&can1_cfg, 0, sizeof(can1_cfg));
-
+    
 #ifdef CAN_DUAL_BOARD
 
 #else
